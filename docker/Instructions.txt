@@ -1,0 +1,13 @@
+Build:
+
+docker build --tag skilljar .
+
+
+Run:
+Use the following command, replacing [full_path_to_creds.json] with the full path to your creds.json file. This can't be a relative path. However, if the current directory contains the json file, you can use
+`pwd`\creds.json
+
+docker run --rm -it -v [full_path_to_creds.json]:/usr/src/app/creds.json skilljar
+
+If you want to setup an alias, modify your ~/.bash_profile (assuming you're using bash and not zsh) to contain this line:
+alias skilljar='docker run --rm -it -v [full_path_to_creds.json]:/usr/src/app/creds.json skilljar'
